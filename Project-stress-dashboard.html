@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study – Stress Dashboard • Ali Hassan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0d1117;--panel:#0f1524;--text:#e8eefc;--muted:#9fb0d0;--brand:#ff6b6b;--brand-2:#6ea8fe;--ring:rgba(255,255,255,.12);--radius:18px}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(1200px 800px at 70% -10%, #1a2347 0, var(--bg) 60%);color:var(--text);font-family:"Plus Jakarta Sans",system-ui}
+    a{color:inherit;text-decoration:none}
+    .nav{position:sticky;top:0;z-index:40;background:rgba(13,17,23,.6);backdrop-filter:blur(12px);border-bottom:1px solid var(--ring)}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;gap:14px;align-items:center;justify-content:space-between;padding:14px 18px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800}
+    .logo .mark{width:32px;height:32px;border-radius:999px;background:conic-gradient(from 180deg,var(--brand),var(--brand-2))}
+    .cta{padding:10px 14px;border-radius:999px;background:var(--brand-2);color:#0b1020;font-weight:800}
+
+    .container{max-width:1100px;margin:0 auto;padding:32px 18px 64px}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid var(--ring);border-radius:18px;padding:24px}
+    .title{font-size:36px;margin:8px 0 6px}
+    .muted{color:var(--muted)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{background:#172143;border:1px solid var(--ring);color:#d6e4ff;padding:6px 10px;border-radius:999px;font-size:12px}
+    .hero img{width:100%;border-radius:16px;border:1px solid var(--ring)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}}
+    .shot{border-radius:12px;overflow:hidden;border:1px solid var(--ring)}
+
+    h2{margin:22px 0 6px}
+    ul{line-height:1.6}
+    footer{margin-top:40px;color:var(--muted);text-align:center;font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <a class="logo" href="index.html"><div class="mark"></div>Ali Hassan</a>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a href="index.html#portfolio">← Back to Portfolio</a>
+        <a class="cta" href="assets/Ali%20Hassan%20-%20QA%20Architect%202024.pdf" download>Download CV</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <div class="muted">Case Study</div>
+        <h1 class="title">Stress Dashboard – QA Automation</h1>
+        <p class="muted">Built dependable E2E and API suites to validate ingestion → processing → visualization pipelines. Reduced regression time and enabled on-demand confidence for releases.</p>
+        <div class="tags">
+          <span class="tag">Playwright</span><span class="tag">Python</span><span class="tag">Pytest</span><span class="tag">Postman</span><span class="tag">ETL</span><span class="tag">Jenkins</span>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1400&auto=format&fit=crop" alt="Dashboard hero"/>
+    </section>
+
+    <section class="card" style="margin-top:20px">
+      <h2>Overview</h2>
+      <p class="muted">The goal was to verify end-to-end reliability of a stress analytics dashboard across data pipeline stages. I designed a layered automation strategy: API checks for ingestion contracts, data-level assertions for transformations, and UI E2E for user journeys and visual integrity.</p>
+      <h2>Highlights</h2>
+      <ul>
+        <li>Reusable Playwright page-objects and test data builders for stable UI specs.</li>
+        <li>Pytest + requests-based API tests gated by Jenkins for PRs and nightly builds.</li>
+        <li>Seeded datasets & fixtures to validate ETL assumptions (schema, nullability, aggregates).</li>
+      </ul>
+      <h2>Results</h2>
+      <ul>
+        <li>~60% faster regressions with reliable nightly packs.</li>
+        <li>Earlier defect discovery (contract mismatches, data drift) caught before UI.</li>
+      </ul>
+    </section>
+
+    <section class="card" style="margin-top:20px">
+      <h2>Gallery</h2>
+      <div class="grid">
+        <img class="shot" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="Spec screenshot"/>
+        <img class="shot" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="CI pipeline"/>
+        <img class="shot" src="https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=1200&auto=format&fit=crop" alt="Dashboard view"/>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:20px">
+      <h2>Tech Stack</h2>
+      <p class="muted">Playwright (JS), Selenium (where needed), Python/Pytest, Postman/Newman, Jenkins, TestRail, BrowserStack.</p>
+      <h2>Links</h2>
+      <ul>
+        <li><a href="#">Demo / Video (add link)</a></li>
+        <li><a href="#">GitHub / Repo (private or public)</a></li>
+      </ul>
+    </section>
+
+    <footer>© <span id="y"></span> Ali Hassan • QA Architect</footer>
+  </main>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
