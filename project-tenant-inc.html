@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Case Study – Tenant Inc • Ali Hassan</title>
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
   <style>
     :root{--bg:#0d1117;--panel:#0f1524;--text:#e8eefc;--muted:#9fb0d0;--brand:#ff6b6b;--brand-2:#6ea8fe;--ring:rgba(255,255,255,.12);--radius:18px}
     *{box-sizing:border-box} body{margin:0;background:radial-gradient(1200px 800px at 70% -10%, #1a2347 0, var(--bg) 60%);color:var(--text);font-family:"Plus Jakarta Sans",system-ui}
@@ -25,7 +23,7 @@
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}} @media (max-width:640px){.grid{grid-template-columns:1fr}}
     .shot{border-radius:12px;overflow:hidden;border:1px solid var(--ring)}
-    .brand{display:flex;gap:10px;align-items:center;margin-bottom:8px}.brand img{height:28px}
+    .brand{display:flex;gap:10px;align-items:center;margin-bottom:8px}.brand img{max-height:22px;height:auto;width:auto;object-fit:contain}
     h2{margin:22px 0 6px} ul{line-height:1.6} footer{margin-top:40px;color:var(--muted);text-align:center;font-size:13px}
   </style>
 </head>
@@ -44,9 +42,9 @@
     <section class="hero">
       <div class="card">
         <div class="brand"><img src="assets/logos/tenantinc.svg" alt="Tenant Inc logo"><span class="muted">Case Study</span></div>
-        <h1 class="title">Tenant Inc — Multi‑tier Automation Architecture</h1>
+        <h1 class="title">Tenant Inc — Multi-tier Automation Architecture</h1>
         <p class="muted">
-          Designed and implemented a 3‑tier automation framework for a self-storage platform, covering Web, API, and Data Migration. 
+          Designed and implemented a 3-tier automation framework for a self-storage platform, covering Web, API, and Data Migration. 
           Base: Robot Framework; Web/API: Selenium/WebDriver; Data Migration checks: Python + Pytest; E2E UI: Playwright JS. 
           Built dependable regression packs in TestRail; integrated PR & nightly pipelines via GitLab/Jenkins; 
           partnered with stakeholders for sprint reviews/demos and coached engineers in automation best practices.
@@ -70,15 +68,6 @@
       <ul>
         <li>~60% faster regression cycles versus previous process.</li>
       </ul>
-    </section>
-
-    <section class="card" style="margin-top:20px">
-      <h2>Gallery</h2>
-      <div class="grid">
-        <img class="shot" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="Page object snippet">
-        <img class="shot" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="CI pipelines">
-        <img class="shot" src="https://images.unsplash.com/photo-1537432376769-00a4c1f8bd5d?q=80&w=1200&auto=format&fit=crop" alt="Reports">
-      </div>
     </section>
 
     <footer>© <span id="y"></span> Ali Hassan • QA Architect</footer>
