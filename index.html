@@ -4,242 +4,225 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ali Hassan • QA Architect</title>
-  <meta name="description" content="Ali Hassan – QA Architect & Test Automation Expert. Playwright, Selenium, Python, Robot Framework. Lahore, Pakistan." />
+  <meta name="description" content="Ali Hassan – QA Architect & Test Automation Expert: Playwright, Selenium, Python, Robot Framework, API & ETL testing." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0b1020;
-      --card: #121a33;
-      --muted: #9fb0d0;
-      --text: #e8eefc;
-      --accent: #6ea8fe;
-      --pill: #1b264b;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
-      --radius-lg: 18px;
-      --radius-sm: 10px;
+    :root{
+      --bg:#0d1117; --panel:#0f1524; --muted:#9fb0d0; --text:#e8eefc; --brand:#ff6b6b; --brand-2:#6ea8fe; --ring:rgba(255,255,255,.12);
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.25)
     }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: radial-gradient(1200px 800px at 70% -10%, #1a2347 0, var(--bg) 60%); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px 80px; }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:radial-gradient(1200px 800px at 70% -10%, #1a2347 0, var(--bg) 60%);color:var(--text);font-family:"Plus Jakarta Sans",system-ui,Segoe UI,Roboto,Arial}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
 
-    /* Header */
-    .header { display: grid; grid-template-columns: 1fr; gap: 18px; align-items: center; margin-top: 12px; }
-    @media (min-width: 800px) { .header { grid-template-columns: 1.2fr .8fr; } }
-    .hero { background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow); }
-    .title { font-size: clamp(28px, 3.2vw, 40px); margin: 0 0 6px; letter-spacing: .5px; }
-    .subtitle { margin: 0 0 18px; color: var(--muted); font-size: 16px; }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 999px; background: var(--accent); color: #0b1020; font-weight: 700; border: 0; cursor: pointer; box-shadow: 0 6px 14px rgba(110,168,254,.3); }
-    .btn.secondary { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,.15); box-shadow: none; }
-    .hero-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-    .pill { background: var(--pill); color: #d6e4ff; padding: 8px 12px; border-radius: 999px; font-size: 13px; border: 1px solid rgba(255,255,255,.06) }
+    /* Header / Nav */
+    .nav-wrap{position:sticky;top:0;z-index:40;background:rgba(13,17,23,.6);backdrop-filter:blur(12px);border-bottom:1px solid var(--ring)}
+    nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
+    .logo-mark{width:34px;height:34px;border-radius:999px;background:conic-gradient(from 180deg at 50% 50%, var(--brand), var(--brand-2));box-shadow:0 0 0 4px rgba(255,255,255,.06)}
+    .nav-links{display:flex;gap:22px;align-items:center}
+    .nav-links a{color:#cfe0ff;font-weight:600;opacity:.9}
+    .nav-links a.active{color:var(--brand-2)}
+    .cta{padding:10px 14px;border-radius:999px;background:var(--brand);color:#0b1020;font-weight:800;border:0;box-shadow:0 6px 14px rgba(255,107,107,.25)}
+    .menu-btn{display:none}
 
-    .contact-card { background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius-lg); padding: 22px; box-shadow: var(--shadow); }
-    .contact-card h3 { margin: 0 0 10px; font-size: 18px; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; font-size: 14px; }
-    @media (max-width: 520px) { .contact-grid { grid-template-columns: 1fr; } }
+    @media (max-width:850px){
+      .menu-btn{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--ring);padding:8px 12px;border-radius:999px}
+      .nav-links{position:fixed;inset:64px 14px auto 14px;background:rgba(15,21,36,.98);border:1px solid var(--ring);border-radius:16px;flex-direction:column;padding:14px;display:none}
+      .nav-links.open{display:flex}
+    }
 
-    /* Sections */
-    section { margin-top: 34px; }
-    .card { background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius-lg); padding: 22px; box-shadow: var(--shadow); }
-    .section-title { margin: 0 0 12px; font-size: 22px; }
+    /* Layout */
+    .container{max-width:1100px;margin:0 auto;padding:40px 18px}
+    section{scroll-margin-top:90px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid var(--ring);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+    .h-eyebrow{color:#b7c7ea;letter-spacing:.3em;text-transform:uppercase;font-weight:700;font-size:12px}
+    .h-title{font-size:clamp(34px,5vw,60px);margin:10px 0 8px;font-weight:800;line-height:1.05}
+    .h-sub{color:var(--muted);font-size:16px}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:var(--brand-2);color:#0b1020;font-weight:800;border:0;cursor:pointer;box-shadow:0 6px 14px rgba(110,168,254,.3)}
+    .btn.alt{background:transparent;color:var(--text);border:1px solid var(--ring);box-shadow:none}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .tag{background:#172143;border:1px solid var(--ring);color:#d6e4ff;padding:8px 12px;border-radius:999px;font-size:13px}
+
+    .profile{border-radius:24px;background:radial-gradient(800px 400px at 60% -40%, #2a3774 0, #101831 60%);border:1px solid var(--ring);box-shadow:var(--shadow);padding:18px}
+    .profile img{border-radius:18px}
+
+    /* Section cards */
+    .sec{margin-top:48px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid var(--ring);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .title{font-size:28px;margin:0 0 10px}
+    .muted{color:var(--muted)}
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}}
+
+    /* Portfolio */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}}
+    .work{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--ring)}
+    .work img{width:100%;height:220px;object-fit:cover}
+    .work .cap{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.6));font-weight:700}
 
     /* Experience */
-    .xp { display: grid; grid-template-columns: 1fr; gap: 14px; }
-    .xp-item { background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius-sm); padding: 16px; }
-    .xp-head { display: flex; flex-wrap: wrap; gap: 10px; align-items: baseline; }
-    .xp-role { font-weight: 700; }
-    .xp-meta { margin-left: auto; color: var(--muted); font-size: 13px; }
-    .xp ul { margin: 10px 0 0 18px; line-height: 1.5; }
+    .timeline{display:grid;gap:12px}
+    .item{border:1px solid var(--ring);border-radius:14px;padding:16px;background:#0f1524}
+    .item .hdr{display:flex;gap:8px;align-items:baseline}
+    .item .role{font-weight:800}
+    .item .meta{margin-left:auto;color:#b7c7ea;font-size:13px}
 
-    /* Skills */
-    .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    @media (max-width:900px){.contact{grid-template-columns:1fr}}
+    .form input,.form textarea{width:100%;background:#0f162b;border:1px solid var(--ring);border-radius:12px;padding:12px 14px;color:var(--text);font:inherit}
+    .form textarea{min-height:130px}
 
-    /* Footer */
-    footer { margin-top: 48px; color: var(--muted); font-size: 13px; text-align: center; }
+    footer{margin:60px 0 20px;color:var(--muted);text-align:center;font-size:13px}
   </style>
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <div class="hero">
-        <h1 class="title">Ali Hassan</h1>
-        <p class="subtitle">QA Architect & Test Automation Expert • Playwright · Selenium · Python · Robot Framework</p>
-        <div class="cta-row">
-          <!-- Replace these hrefs with valid links in your repo (e.g., /assets/resume.pdf) -->
-          <a class="btn" href="#" title="Email Ali">Email</a>
-          <a class="btn secondary" href="#projects" title="Jump to projects">View Projects</a>
-          <a class="btn secondary" href="#experience" title="Work experience">Experience</a>
-        </div>
-        <div class="hero-list">
-          <span class="pill">Playwright (JS)</span>
-          <span class="pill">Selenium WebDriver</span>
-          <span class="pill">Python · Pytest</span>
-          <span class="pill">Robot Framework</span>
-          <span class="pill">API · ETL · Backend</span>
-          <span class="pill">Jenkins · GitLab CI</span>
-          <span class="pill">TestRail</span>
-          <span class="pill">BrowserStack</span>
-        </div>
+  <div class="nav-wrap">
+    <nav>
+      <div class="logo"><div class="logo-mark"></div>Ali Hassan</div>
+      <button class="menu-btn" id="menu">Menu ▾</button>
+      <div class="nav-links" id="links">
+        <a href="#home" class="link">Home</a>
+        <a href="#about" class="link">About</a>
+        <a href="#portfolio" class="link">Portfolio</a>
+        <a href="#contact" class="link">Contact</a>
+        <a class="cta" href="assets/Ali%20Hassan%20-%20QA%20Architect%202024.docx" download>Download CV</a>
       </div>
-      <aside class="contact-card">
-        <h3>Contact</h3>
-        <div class="contact-grid">
-          <div><strong>Location:</strong><br/>Lahore, Pakistan</div>
-          <div><strong>Phone:</strong><br/><a href="tel:+923224260397">+92 322 426 0397</a></div>
-          <div><strong>Email:</strong><br/><a href="mailto:syedalihasn@gmail.com">syedalihasn@gmail.com</a></div>
-          <div><strong>LinkedIn:</strong><br/><a href="#" target="_blank" rel="noopener">linkedin.com/in/syed-ali-hassan</a></div>
-        </div>
-        <div class="cta-row" style="margin-top:12px">
-          <!-- Update these URLs after you place the files in /assets in your repo -->
-          <a class="btn" href="assets/Ali%20Hassan%20-%20QA%20Architect%202024%20-%20MSWord.docx" download>Download Résumé</a>
-          <a class="btn secondary" href="assets/Ali_Hassan_Cover_Letter.docx" download>Cover Letter</a>
-        </div>
-      </aside>
-    </header>
-
-    <section id="summary">
-      <div class="card">
-        <h2 class="section-title">Profile</h2>
-        <p>Experienced QA leader with 10+ years across SaaS, telecom, and enterprise platforms. I design practical automation frameworks, speed up releases, and align quality with delivery through clear OKRs and collaborative rituals.</p>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="card">
-        <h2 class="section-title">Work Experience</h2>
-        <div class="xp">
-          <div class="xp-item">
-            <div class="xp-head">
-              <div class="xp-role">QA Architect / Test Automation Expert — Strategic Systems International</div>
-              <div class="xp-meta">Jul 2015 – Present</div>
-            </div>
-            <ul>
-              <li>Led QA for an enterprise self‑storage program; introduced measurable, repeatable practices that cut regression time by ~60%.</li>
-              <li>Built multi‑layered automation using Pytest, Python, Selenium WebDriver, Robot Framework, and Playwright (JavaScript).</li>
-              <li>Established QA foundations: risk‑based test planning, case design/execution, and defect management.</li>
-              <li>Defined and tracked team OKRs to align with org goals.</li>
-            </ul>
-          </div>
-          <div class="xp-item">
-            <div class="xp-head">
-              <div class="xp-role">Sr. Software Test Engineer — Softech Systems</div>
-              <div class="xp-meta">Jun 2011 – Jul 2015</div>
-            </div>
-            <ul>
-              <li>Owned test case creation/prioritization for large programs; identified risks and dependencies.</li>
-              <li>Automated healthcare testing with Pytest/Selenium, facilitating robust coverage and reviews with stakeholders.</li>
-              <li>Mentored team members; ran interviews and technical trainings.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="card">
-        <h2 class="section-title">Selected Projects</h2>
-        <div class="xp">
-          <div class="xp-item">
-            <div class="xp-head">
-              <div class="xp-role">Tenant Inc. — Lead QA Architect & Test Automation Owner</div>
-              <div class="xp-meta">Oct 2018 – Present</div>
-            </div>
-            <ul>
-              <li>Designed a 3‑tier automation architecture (Web, API, Data Migration) using Robot Framework, Selenium/WebDriver, Pytest/Python, and Playwright JS for E2E.</li>
-              <li>Built dependable regression packs in TestRail; integrated suites with Jenkins/GitLab for fast, reliable feedback.</li>
-              <li>Partnered with stakeholders/clients for sprint reviews, demos, and show‑and‑tell sessions; coached engineers in automation.</li>
-            </ul>
-          </div>
-          <div class="xp-item">
-            <div class="xp-head">
-              <div class="xp-role">Etisalat (FTTH & WiMAX) — Senior QA Analyst, E2E Testing</div>
-              <div class="xp-meta">Apr 2014 – Sep 2015</div>
-            </div>
-            <ul>
-              <li>Contributed to Ericsson’s Order Care Management tooling for complex order flows (activation, deactivation, cease, TOSS).</li>
-              <li>Drove cross‑system E2E scenarios to ensure seamless service quality.</li>
-            </ul>
-          </div>
-          <div class="xp-item">
-            <div class="xp-head">
-              <div class="xp-role">BMW — QA Engineer, UAT</div>
-              <div class="xp-meta">Jul 2011 – Jun 2014</div>
-            </div>
-            <ul>
-              <li>Supported rollout of new Account Management capabilities to accelerate time‑to‑market in multiple regions.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="card">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills">
-          <span class="pill">Playwright (JavaScript)</span>
-          <span class="pill">Selenium WebDriver</span>
-          <span class="pill">Robot Framework</span>
-          <span class="pill">Python</span>
-          <span class="pill">Pytest</span>
-          <span class="pill">Postman (API)</span>
-          <span class="pill">ETL / Backend Testing</span>
-          <span class="pill">Jenkins</span>
-          <span class="pill">GitLab CI</span>
-          <span class="pill">TestRail</span>
-          <span class="pill">Azure DevOps</span>
-          <span class="pill">Jira</span>
-          <span class="pill">Monday.com</span>
-          <span class="pill">BrowserStack</span>
-          <span class="pill">SQL / Databases</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="education">
-      <div class="card">
-        <h2 class="section-title">Education</h2>
-        <div class="xp">
-          <div class="xp-item">
-            <div class="xp-head">
-              <div class="xp-role">BS, Computer Science — Government College University, Lahore</div>
-              <div class="xp-meta">2006 – 2010</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="certs">
-      <div class="card">
-        <h2 class="section-title">Certifications</h2>
-        <ul>
-          <li>ISTQB® Certified Tester — CTFL</li>
-          <li>Scrum Alliance® — SCF</li>
-          <li>Certified in Business Communications</li>
-        </ul>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="y"></span> Ali Hassan · Built with vanilla HTML/CSS. You’re viewing the single‑file version for easy hosting.
-    </footer>
+    </nav>
   </div>
 
-  <script>
-    // Fill current year in footer
-    document.getElementById('y').textContent = new Date().getFullYear();
+  <main id="home" class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="h-eyebrow">QA Architect • Test Automation</div>
+        <h1 class="h-title">I build reliable, scalable test automation for web, API & data.</h1>
+        <p class="h-sub">Playwright (JS) · Selenium · Python/Pytest · Robot Framework · Postman · ETL/Backend · Jenkins · TestRail · BrowserStack.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#contact">Hire Me</a>
+          <a class="btn alt" href="#portfolio">View Portfolio</a>
+        </div>
+        <div class="tags">
+          <span class="tag">Playwright</span><span class="tag">Selenium</span><span class="tag">Robot Framework</span>
+          <span class="tag">Python · Pytest</span><span class="tag">API & ETL</span><span class="tag">Jenkins</span>
+        </div>
+      </div>
+      <aside class="profile">
+        <!-- Replace with your photo if you like -->
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="Ali Hassan portrait placeholder"/>
+      </aside>
+    </section>
 
-    // Replace Email/LinkedIn buttons with real links after deploy
-    const emailBtn = document.querySelector('.btn[href="#"]');
-    if (emailBtn) emailBtn.setAttribute('href', 'mailto:syedalihasn@gmail.com');
-    const linkedin = document.querySelector('.contact-grid a[href="#"]');
-    if (linkedin) linkedin.setAttribute('href', 'https://www.linkedin.com/in/syed-ali-hassan-35079a23');
+    <section id="about" class="sec">
+      <div class="card">
+        <h2 class="title">About Me</h2>
+        <div class="about-grid">
+          <div>
+            <p class="muted">QA leader with 10+ years across SaaS, telecom, and enterprise. I design pragmatic automation frameworks and shorten release cycles while keeping quality measurable (OKRs, risk‑based testing, and clean CI feedback).</p>
+            <ul>
+              <li>Cut regression time by ~60% with layered automation and reliable regression packs.</li>
+              <li>Own the toolchain: Playwright, Selenium, Robot, Pytest, Postman, Jenkins/GitLab, TestRail.</li>
+              <li>Coach teams, run reviews/demos, and align work with business goals.</li>
+            </ul>
+          </div>
+          <div class="timeline">
+            <div class="item">
+              <div class="hdr"><div class="role">QA Architect — Strategic Systems International</div><div class="meta">2015 – Present</div></div>
+              <div class="muted">Lead automation for enterprise programs; web, API, and data migration testing.</div>
+            </div>
+            <div class="item">
+              <div class="hdr"><div class="role">Sr. Software Test Engineer — Softech Systems</div><div class="meta">2011 – 2015</div></div>
+              <div class="muted">Healthcare and telecom testing at scale; introduced automation and reviews.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="sec">
+      <div class="card">
+        <h2 class="title">Portfolio</h2>
+        <p class="muted">A few representative projects. Swap screenshots/links with your own demos or GitHub repos.</p>
+        <div class="grid">
+          <a class="work" href="#" target="_blank" rel="noopener">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400&auto=format&fit=crop" alt="Dashboard project"/>
+            <div class="cap">Stress Dashboard – E2E & API automation</div>
+          </a>
+          <a class="work" href="#" target="_blank" rel="noopener">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop" alt="Tenant Inc project"/>
+            <div class="cap">Tenant Inc – Multi‑tier test architecture</div>
+          </a>
+          <a class="work" href="#" target="_blank" rel="noopener">
+            <img src="https://images.unsplash.com/photo-1518776078013-ec3579fee39f?q=80&w=1400&auto=format&fit=crop" alt="Etisalat project"/>
+            <div class="cap">Etisalat FTTH – Complex E2E scenarios</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="sec">
+      <div class="card contact">
+        <div>
+          <h2 class="title">Contact</h2>
+          <p class="muted">Let’s talk about testing strategy, automation architecture, or a specific project.</p>
+          <div style="display:grid;gap:10px;margin:10px 0 14px">
+            <div><strong>Email:</strong> <a href="mailto:syedalihasn@gmail.com">syedalihasn@gmail.com</a></div>
+            <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/syed-ali-hassan-35079a23" target="_blank" rel="noopener">linkedin.com/in/syed-ali-hassan</a></div>
+            <div><strong>Location:</strong> Lahore, Pakistan</div>
+          </div>
+          <a class="btn" href="assets/Ali_Hassan_Cover_Letter.docx" download>Download Cover Letter</a>
+        </div>
+        <form class="form" action="https://formspree.io/f/your-id" method="POST">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Email" required style="margin-top:10px">
+          <textarea name="message" placeholder="Tell me about your project" style="margin-top:10px"></textarea>
+          <button class="btn" type="submit" style="margin-top:12px">Send Message</button>
+          <p class="muted" style="font-size:12px;margin-top:6px">(Update the action URL with your Formspree ID to activate.)</p>
+        </form>
+      </div>
+    </section>
+
+    <footer>© <span id="y"></span> Ali Hassan · QA Architect · Built with modern, single‑file HTML/CSS.</footer>
+  </main>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu');
+    const links = document.getElementById('links');
+    menuBtn?.addEventListener('click',()=>links.classList.toggle('open'));
+
+    // Scrollspy active states
+    const navLinks = [...document.querySelectorAll('.link')];
+    const ids = navLinks.map(a=>a.getAttribute('href'));
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        const id = `#${e.target.id}`;
+        const link = navLinks.find(a=>a.getAttribute('href')===id);
+        if(link){
+          if(e.isIntersecting){ navLinks.forEach(a=>a.classList.remove('active')); link.classList.add('active'); }
+        }
+      })
+    },{rootMargin:'-60% 0px -35% 0px',threshold:0});
+    ids.forEach(id=>{ const el=document.querySelector(id); if(el) obs.observe(el); });
+
+    // Smooth scroll for nav
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{ const hash=a.getAttribute('href'); if(hash.length>1){ e.preventDefault(); document.querySelector(hash).scrollIntoView({behavior:'smooth'}); links.classList.remove('open'); }});
+    });
+
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
