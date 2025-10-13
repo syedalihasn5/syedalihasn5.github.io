@@ -5,12 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ali Hassan • QA Architect</title>
   <meta name="description" content="Ali Hassan – QA Architect & Test Automation Expert: Playwright, Selenium, Python, Robot Framework, API & ETL testing." />
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  
   <style>
     :root{
       --bg:#0d1117; --panel:#0f1524; --muted:#9fb0d0; --text:#e8eefc;
@@ -82,7 +79,7 @@
     .work img{width:100%;height:220px;object-fit:cover}
     .work .cap{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.6));font-weight:700}
     .work .brand{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);border:1px solid var(--ring);border-radius:10px;padding:6px 8px}
-    .work .brand img{height:22px;display:block}
+    .work .brand img{max-height:22px;height:auto;width:auto;display:block;object-fit:contain}
     /* Contact */
     .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
     @media (max-width:900px){.contact{grid-template-columns:1fr}}
@@ -90,10 +87,8 @@
     .form textarea{min-height:130px}
     footer{margin:60px 0 20px;color:var(--muted);text-align:center;font-size:13px}
   </style>
-
 </head>
 <body>
-  
   <div class="nav-wrap">
     <nav>
       <div class="logo"><div class="logo-mark"></div>Ali Hassan</div>
@@ -137,7 +132,7 @@
         <h2 class="title">About Me</h2>
         <div class="about-grid">
           <div>
-            <p class="muted">QA leader with 10+ years across SaaS, telecom, and enterprise. I design pragmatic automation frameworks and shorten release cycles while keeping quality measurable (OKRs, risk‑based testing, and clean CI feedback).</p>
+            <p class="muted">QA leader with 10+ years across SaaS, telecom, and enterprise. I design pragmatic automation frameworks and shorten release cycles while keeping quality measurable (OKRs, risk-based testing, and clean CI feedback).</p>
             <ul>
               <li>Cut regression time by ~60% with layered automation and reliable regression packs.</li>
               <li>Own the toolchain: Playwright, Selenium, Robot, Pytest, Postman, Jenkins/GitLab, TestRail.</li>
@@ -160,7 +155,7 @@
           <a class="work" href="project-tenant-inc.html">
             <div class="brand"><img src="assets/logos/tenantinc.svg" alt="Tenant Inc logo"></div>
             <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop" alt="Tenant Inc case study">
-            <div class="cap">Tenant Inc — Self‑Storage QA Architecture</div>
+            <div class="cap">Tenant Inc — Self-Storage QA Architecture</div>
           </a>
           <a class="work" href="project-etisalat-ftth.html">
             <div class="brand"><img src="assets/logos/etisalat.svg" alt="Etisalat logo"></div>
@@ -201,11 +196,9 @@
       </div>
     </section>
 
-    <footer>© <span id="y"></span> Ali Hassan · QA Architect · Built with modern, single‑file HTML/CSS.</footer>
+    <footer>© <span id="y"></span> Ali Hassan · QA Architect · Built with modern, single-file HTML/CSS.</footer>
   </main>
-  
   <script>
-    // Theme
     const pref = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', pref);
     const toggle = document.getElementById('toggle');
@@ -215,11 +208,9 @@
       document.documentElement.setAttribute('data-theme', nxt);
       localStorage.setItem('theme', nxt);
     });
-    // Mobile menu
     const menuBtn = document.getElementById('menu');
     const links = document.getElementById('links');
     menuBtn?.addEventListener('click',()=>links.classList.toggle('open'));
-    // Scrollspy
     const navLinks = [...document.querySelectorAll('.link')];
     const ids = navLinks.map(a=>a.getAttribute('href'));
     const obs = new IntersectionObserver((entries)=>{
@@ -232,12 +223,10 @@
       })
     },{rootMargin:'-60% 0px -35% 0px',threshold:0});
     ids.forEach(id=>{ const el=document.querySelector(id); if(el) obs.observe(el); });
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{ const hash=a.getAttribute('href'); if(hash.length>1){ e.preventDefault(); document.querySelector(hash).scrollIntoView({behavior:'smooth'}); links?.classList.remove('open'); }});
     });
     document.getElementById('y')?.textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
