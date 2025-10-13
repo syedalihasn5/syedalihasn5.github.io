@@ -5,26 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ali Hassan • QA Architect</title>
   <meta name="description" content="Ali Hassan – QA Architect & Test Automation Expert: Playwright, Selenium, Python, Robot Framework, API & ETL testing." />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  
   <style>
-    /* THEME TOKENS */
     :root{
-      --bg:#0d1117; --panel:#0f1524; --muted:#9fb0d0; --text:#e8eefc; --brand:#ff6b6b; --brand-2:#6ea8fe; --ring:rgba(255,255,255,.12);
-      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.25)
+      --bg:#0d1117; --panel:#0f1524; --muted:#9fb0d0; --text:#e8eefc;
+      --brand:#ff6b6b; --brand-2:#6ea8fe; --ring:rgba(255,255,255,.12);
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.25);
     }
     html[data-theme="light"]{
-      --bg:#fcfcfe; --panel:#ffffff; --muted:#4b5568; --text:#0b1020; --brand:#e74e4e; --brand-2:#3b82f6; --ring:rgba(2,6,23,.12);
+      --bg:#fcfcfe; --panel:#ffffff; --muted:#4b5568; --text:#0b1020;
+      --brand:#e74e4e; --brand-2:#3b82f6; --ring:rgba(2,6,23,.12);
     }
-
     *{box-sizing:border-box}
-    html,body{margin:0;background:radial-gradient(1200px 800px at 70% -10%, #1a2347 0, var(--bg) 60%);color:var(--text);font-family:"Plus Jakarta Sans",system-ui,Segoe UI,Roboto,Arial}
+    html,body{margin:0;background:radial-gradient(1200px 800px at 70% -10%, #1a2347 0, var(--bg) 60%);
+      color:var(--text);font-family:"Plus Jakarta Sans",system-ui}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-
-    /* Header / Nav */
-    .nav-wrap{position:sticky;top:0;z-index:40;background:color-mix(in oklab, var(--bg) 60%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--ring)}
+    /* Nav */
+    .nav-wrap{position:sticky;top:0;z-index:40;background:color-mix(in oklab, var(--bg) 60%, transparent);
+      backdrop-filter:blur(12px);border-bottom:1px solid var(--ring)}
     nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px}
     .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
     .logo-mark{width:34px;height:34px;border-radius:999px;background:conic-gradient(from 180deg at 50% 50%, var(--brand), var(--brand-2));box-shadow:0 0 0 4px color-mix(in oklab, var(--text) 8%, transparent)}
@@ -34,46 +38,42 @@
     .nav-links a.active{color:var(--brand-2)}
     .cta{padding:10px 14px;border-radius:999px;background:var(--brand);color:#0b1020;font-weight:800;border:0;box-shadow:0 6px 14px color-mix(in oklab, var(--brand) 30%, transparent)}
     .menu-btn,.toggle{display:none}
-
     @media (max-width:850px){
       .menu-btn{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--ring);padding:8px 12px;border-radius:999px}
       .toggle{display:inline-flex;border:1px solid var(--ring);padding:8px 12px;border-radius:999px}
-      .nav-links{position:fixed;inset:64px 14px auto 14px;background:color-mix(in oklab, var(--panel) 96%, transparent);border:1px solid var(--ring);border-radius:16px;flex-direction:column;padding:14px;display:none}
+      .nav-links{position:fixed;inset:64px 14px auto 14px;background:color-mix(in oklab, var(--panel) 96%, transparent);
+        border:1px solid var(--ring);border-radius:16px;flex-direction:column;padding:14px;display:none}
       .nav-links.open{display:flex}
     }
-
     /* Layout */
     .container{max-width:1100px;margin:0 auto;padding:40px 18px}
     section{scroll-margin-top:90px}
-
     /* Hero */
     .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
-    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid var(--ring);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid var(--ring);
+      border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
     html[data-theme="light"] .hero-card{background:linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.015))}
     .h-eyebrow{color:color-mix(in oklab, var(--text) 60%, var(--muted));letter-spacing:.3em;text-transform:uppercase;font-weight:700;font-size:12px}
     .h-title{font-size:clamp(34px,5vw,60px);margin:10px 0 8px;font-weight:800;line-height:1.05}
     .h-sub{color:var(--muted);font-size:16px}
     .hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:var(--brand-2);color:#0b1020;font-weight:800;border:0;cursor:pointer;box-shadow:0 6px 14px color-mix(in oklab, var(--brand-2) 30%, transparent)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:var(--brand-2);
+      color:#0b1020;font-weight:800;border:0;cursor:pointer;box-shadow:0 6px 14px color-mix(in oklab, var(--brand-2) 30%, transparent)}
     .btn.alt{background:transparent;color:var(--text);border:1px solid var(--ring);box-shadow:none}
     .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
     .tag{background:color-mix(in oklab, var(--panel) 85%, transparent);border:1px solid var(--ring);color:color-mix(in oklab, var(--text) 85%, var(--muted));padding:8px 12px;border-radius:999px;font-size:13px}
-
     .profile{border-radius:24px;background:radial-gradient(800px 400px at 60% -40%, #2a3774 0, #101831 60%);border:1px solid var(--ring);box-shadow:var(--shadow);padding:18px}
     html[data-theme="light"] .profile{background:radial-gradient(800px 400px at 60% -40%, #d9e6ff 0, #f6f8ff 60%)}
     .profile img{border-radius:18px}
-
     /* Section cards */
     .sec{margin-top:48px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid var(--ring);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid var(--ring);
+      border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
     html[data-theme="light"] .card{background:linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.015))}
-    .title{font-size:28px;margin:0 0 10px}
-    .muted{color:var(--muted)}
-
+    .title{font-size:28px;margin:0 0 10px}.muted{color:var(--muted)}
     /* About */
     .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
     @media (max-width:900px){.hero{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}}
-
     /* Portfolio */
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     @media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
@@ -81,24 +81,19 @@
     .work{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--ring)}
     .work img{width:100%;height:220px;object-fit:cover}
     .work .cap{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.6));font-weight:700}
-
-    /* Experience */
-    .timeline{display:grid;gap:12px}
-    .item{border:1px solid var(--ring);border-radius:14px;padding:16px;background:color-mix(in oklab, var(--panel) 96%, transparent)}
-    .item .hdr{display:flex;gap:8px;align-items:baseline}
-    .item .role{font-weight:800}
-    .item .meta{margin-left:auto;color:color-mix(in oklab, var(--text) 70%, var(--muted));font-size:13px}
-
+    .work .brand{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);border:1px solid var(--ring);border-radius:10px;padding:6px 8px}
+    .work .brand img{height:22px;display:block}
     /* Contact */
     .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
     @media (max-width:900px){.contact{grid-template-columns:1fr}}
     .form input,.form textarea{width:100%;background:color-mix(in oklab, var(--panel) 92%, transparent);border:1px solid var(--ring);border-radius:12px;padding:12px 14px;color:var(--text);font:inherit}
     .form textarea{min-height:130px}
-
     footer{margin:60px 0 20px;color:var(--muted);text-align:center;font-size:13px}
   </style>
+
 </head>
 <body>
+  
   <div class="nav-wrap">
     <nav>
       <div class="logo"><div class="logo-mark"></div>Ali Hassan</div>
@@ -133,8 +128,7 @@
         </div>
       </div>
       <aside class="profile">
-        <!-- Replace with your photo if you like -->
-        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="Ali Hassan portrait placeholder"/>
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="Portrait placeholder"/>
       </aside>
     </section>
 
@@ -151,14 +145,8 @@
             </ul>
           </div>
           <div class="timeline">
-            <div class="item">
-              <div class="hdr"><div class="role">QA Architect — Strategic Systems International</div><div class="meta">2015 – Present</div></div>
-              <div class="muted">Lead automation for enterprise programs; web, API, and data migration testing.</div>
-            </div>
-            <div class="item">
-              <div class="hdr"><div class="role">Sr. Software Test Engineer — Softech Systems</div><div class="meta">2011 – 2015</div></div>
-              <div class="muted">Healthcare and telecom testing at scale; introduced automation and reviews.</div>
-            </div>
+            <div class="item"><div class="hdr"><div class="role">QA Architect — Strategic Systems International</div><div class="meta">2015 – Present</div></div><div class="muted">Lead automation for enterprise programs; web, API, and data migration testing.</div></div>
+            <div class="item"><div class="hdr"><div class="role">Sr. Software Test Engineer — Softech Systems</div><div class="meta">2011 – 2015</div></div><div class="muted">Healthcare and telecom testing at scale; introduced automation and reviews.</div></div>
           </div>
         </div>
       </div>
@@ -167,19 +155,22 @@
     <section id="portfolio" class="sec">
       <div class="card">
         <h2 class="title">Portfolio</h2>
-        <p class="muted">A few representative projects. Swap screenshots/links with your own demos or GitHub repos.</p>
+        <p class="muted">Case studies from my résumé.</p>
         <div class="grid">
-          <a class="work" href="project-stress-dashboard.html">
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400&auto=format&fit=crop" alt="Stress Dashboard project"/>
-            <div class="cap">Stress Dashboard – E2E & API automation</div>
-          </a>
           <a class="work" href="project-tenant-inc.html">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop" alt="Tenant Inc project"/>
-            <div class="cap">Tenant Inc – Multi‑tier test architecture</div>
+            <div class="brand"><img src="assets/logos/tenantinc.svg" alt="Tenant Inc logo"></div>
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop" alt="Tenant Inc case study">
+            <div class="cap">Tenant Inc — Self‑Storage QA Architecture</div>
           </a>
           <a class="work" href="project-etisalat-ftth.html">
-            <img src="https://images.unsplash.com/photo-1518776078013-ec3579fee39f?q=80&w=1400&auto=format&fit=crop" alt="Etisalat FTTH project"/>
-            <div class="cap">Etisalat FTTH – Complex E2E scenarios</div>
+            <div class="brand"><img src="assets/logos/etisalat.svg" alt="Etisalat logo"></div>
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop" alt="Etisalat FTTH WiMAX case study">
+            <div class="cap">Etisalat — FTTH & WiMAX E2E Testing</div>
+          </a>
+          <a class="work" href="project-bmw-bip.html">
+            <div class="brand"><img src="assets/logos/bmw.svg" alt="BMW logo"></div>
+            <img src="https://images.unsplash.com/photo-1517940310602-75f38f8cb537?q=80&w=1400&auto=format&fit=crop" alt="BMW BIP UAT case study">
+            <div class="cap">BMW — Business Integration Platform (UAT)</div>
           </a>
         </div>
       </div>
@@ -196,7 +187,7 @@
             <div><strong>Location:</strong> Lahore, Pakistan</div>
           </div>
           <div class="hero-cta" style="margin-top:8px">
-            <a class="btn" href="assets/ali-hassan-cover-letter.pdf" download>Cover Letter (PDF)</a>
+            <a class="btn" href="assets/Ali%20Hassan%20-%20QA%20Architect%202024.pdf" download>CV (PDF)</a>
             <a class="btn alt" href="assets/Ali_Hassan_Cover_Letter.docx" download>Cover Letter (DOCX)</a>
           </div>
         </div>
@@ -212,18 +203,11 @@
 
     <footer>© <span id="y"></span> Ali Hassan · QA Architect · Built with modern, single‑file HTML/CSS.</footer>
   </main>
-
+  
   <script>
-    // Theme: read & set
+    // Theme
     const pref = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', pref);
-
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menu');
-    const links = document.getElementById('links');
-    menuBtn?.addEventListener('click',()=>links.classList.toggle('open'));
-
-    // Theme toggle
     const toggle = document.getElementById('toggle');
     toggle?.addEventListener('click', ()=>{
       const cur = document.documentElement.getAttribute('data-theme');
@@ -231,8 +215,11 @@
       document.documentElement.setAttribute('data-theme', nxt);
       localStorage.setItem('theme', nxt);
     });
-
-    // Scrollspy active states
+    // Mobile menu
+    const menuBtn = document.getElementById('menu');
+    const links = document.getElementById('links');
+    menuBtn?.addEventListener('click',()=>links.classList.toggle('open'));
+    // Scrollspy
     const navLinks = [...document.querySelectorAll('.link')];
     const ids = navLinks.map(a=>a.getAttribute('href'));
     const obs = new IntersectionObserver((entries)=>{
@@ -245,14 +232,12 @@
       })
     },{rootMargin:'-60% 0px -35% 0px',threshold:0});
     ids.forEach(id=>{ const el=document.querySelector(id); if(el) obs.observe(el); });
-
-    // Smooth scroll for nav
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{ const hash=a.getAttribute('href'); if(hash.length>1){ e.preventDefault(); document.querySelector(hash).scrollIntoView({behavior:'smooth'}); links.classList.remove('open'); }});
+      a.addEventListener('click', e=>{ const hash=a.getAttribute('href'); if(hash.length>1){ e.preventDefault(); document.querySelector(hash).scrollIntoView({behavior:'smooth'}); links?.classList.remove('open'); }});
     });
-
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('y')?.textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
