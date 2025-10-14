@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Case Study – BMW BIP (UAT) • Ali Hassan</title>
+  <meta name="description" content="UAT for BMW's Business Integration Platform: Account Management capability, multi-model rollouts, faster time-to-market." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -10,16 +11,27 @@
     :root{--bg:#0d1117;--panel:#0f1524;--text:#e8eefc;--muted:#9fb0d0;--brand:#ff6b6b;--brand-2:#6ea8fe;--ring:rgba(255,255,255,.12);--radius:18px}
     *{box-sizing:border-box} body{margin:0;background:radial-gradient(1200px 800px at 70% -10%, #1a2347 0, var(--bg) 60%);color:var(--text);font-family:"Plus Jakarta Sans",system-ui}
     a{color:inherit;text-decoration:none}
+
     .nav{position:sticky;top:0;z-index:40;background:rgba(13,17,23,.6);backdrop-filter:blur(12px);border-bottom:1px solid var(--ring)}
     .nav-inner{max-width:1100px;margin:0 auto;display:flex;gap:14px;align-items:center;justify-content:space-between;padding:14px 18px}
     .logo{display:flex;align-items:center;gap:10px;font-weight:800}.logo .mark{width:32px;height:32px;border-radius:999px;background:conic-gradient(from 180deg,var(--brand),var(--brand-2))}
     .cta{padding:10px 14px;border-radius:999px;background:var(--brand-2);color:#0b1020;font-weight:800}
+
     .container{max-width:1100px;margin:0 auto;padding:32px 18px 64px}
     .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
     .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid var(--ring);border-radius:18px;padding:24px}
     .title{font-size:36px;margin:8px 0 6px}.muted{color:var(--muted)}
-    .brand{display:flex;gap:10px;align-items:center;margin-bottom:8px}.brand img{max-height:22px;height:auto;width:auto;object-fit:contain}
+
+    .brand{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+    .brand img{max-height:22px;height:auto;width:auto;object-fit:contain}
+
+    .hero img{width:100%;border-radius:16px;border:1px solid var(--ring);object-fit:cover;aspect-ratio:16/9}
+
     footer{margin-top:40px;color:var(--muted);text-align:center;font-size:13px}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
@@ -41,12 +53,25 @@
         <p class="muted">
           Contributed to UAT for the Business Integration Platform, supporting a new Account Management capability designed for multiple business models and faster time-to-market — enabling rollouts to new regions with shorter lead times.
         </p>
+        <ul>
+          <li>Validated end-to-end flows across key BIP modules; focused on account lifecycle and integration touchpoints.</li>
+          <li>Drove test design and coverage for UAT scenarios; captured outcomes in TestRail with clear pass/fail signals.</li>
+          <li>Collaborated across product/engineering to triage defects and tighten release readiness criteria.</li>
+        </ul>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+          <span class="muted" style="border:1px solid var(--ring);padding:6px 10px;border-radius:999px;font-size:12px">UAT</span>
+          <span class="muted" style="border:1px solid var(--ring);padding:6px 10px;border-radius:999px;font-size:12px">Enterprise Integration</span>
+          <span class="muted" style="border:1px solid var(--ring);padding:6px 10px;border-radius:999px;font-size:12px">TestRail</span>
+        </div>
       </div>
-      <img src="https://images.unsplash.com/photo-1517940310602-75f38f8cb537?q=80&w=1400&auto=format&fit=crop" alt="BMW BIP">
+
+      <!-- Reliable, local image (add this file to your repo at assets/portfolio/bmw-bip-hero.jpg) -->
+      <img src="assets/portfolio/bmw-bip-hero.jpg" alt="Business Integration Platform — abstract systems diagram background">
     </section>
 
     <footer>© <span id="y"></span> Ali Hassan • QA Architect</footer>
   </main>
+
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
